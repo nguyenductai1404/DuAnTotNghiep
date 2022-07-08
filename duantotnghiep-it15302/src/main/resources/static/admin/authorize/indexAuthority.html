@@ -1,0 +1,18 @@
+<center style="color: red"><h2>Phân quyền</h2></center>
+<br>
+<table ng-if="db" style="width: 100% "  border="1"class="table table-bordered table-list " >
+	<thead >
+		<tr style="color: white">
+			<th>Tài khoản</th>
+			<th ng-repeat="role in db.roles">{{role.name}} </th>
+		</tr>
+	</thead>
+	<tbody style="color: white">
+		<tr ng-repeat="acc in db.accounts">
+			<th>{{acc.username}}</th>
+			<th ng-repeat="role in db.roles"><input type="checkbox"
+				ng-checked="index_of(acc.username, role.id) >=0"
+				ng-click="update(acc.username, role.id)"></th>
+		</tr>
+	</tbody>
+</table>

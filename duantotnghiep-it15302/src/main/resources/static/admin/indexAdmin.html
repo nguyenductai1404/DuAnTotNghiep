@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<title>Welcome to Shop Young Creative</title>
+<link rel="shortcut icon" href="../../images/logo1-test.png">
+<link href="../../css/bootstrap.css" rel="stylesheet">
+<link href="../../css/sequence-looptheme.css" rel="stylesheet" />
+<link href="../../css/style.css" rel="stylesheet">
+<link href="../../css/them.css" rel="stylesheet">
+<link href="../../css/indivi.css" rel="stylesheet">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+</head>
+<body id="home" ng-app="admin-app">
+	<div class="wrapper">
+		<div class="header">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-2 col-sm-2">
+						<div class="them_logo">
+							<a href="/home/index"><img src="../../images/logo1-test.png"
+								alt="FlatShop"></a>
+						</div>
+					</div>
+					<div class="col-md-10 col-sm-10">
+						<div class="header_bottom">
+							<div class="navbar-collapse collapse">
+								<ul class="nav navbar-nav1">
+									<li><a href="/home/index">Trang chủ</a></li>
+									<li class="dropdown"><a href="#" class="dropdown-toggle"
+										data-toggle="dropdown">QUẢN LÝ</a>
+										<div class="dropdown-menu">
+											<ul class="mega-menu-links">
+												<li><a href="#!account">QUẢN LÝ TÀI KHOẢN</a></li>
+												<li><a href="#!store">QUẢN LÝ CỬA HÀNG</a></li>
+											</ul>
+										</div></li>
+									<li><a href="#!authorize">ỦY QUYỀN</a></li>
+									<li><a href="/security/logoff">ĐĂNG XUẤT</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<main>
+			<p class="ng-view" />
+		</main>
+		<div class="copyright-info">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6">
+						<p>
+							Copyright © 2012. Designed by <a href="#">Michael Lee</a>. All
+							rights reseved
+						</p>
+					</div>
+					<div class="col-md-6">
+						<ul class="social-icon">
+							<li><a href="#" class="linkedin"></a></li>
+							<li><a href="#" class="google-plus"></a></li>
+							<li><a href="#" class="twitter"></a></li>
+							<li><a href="#" class="facebook"></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="/admin/admin-app.js"></script>
+	<script src="/admin/authorize/authorize-ctrl.js"></script>
+	<script src="/admin/account/account-ctrl.js"></script>
+	<script src="/admin/product/product-ctrl.js"></script>
+	<script src="/admin/store/store-ctrl.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<body>
+	<div class="container" style="padding: 20px">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="panel panel-default panel-table">
+					<div class="panel-heading">
+						<div class="row">
+							<div class="col col-xs-6">
+								<h3 class="panel-title">Thống kê</h3>
+							</div>
+						</div>
+					</div>
+					<div class="panel-body">
+						<div>
+							<div class="form-group col-sm-5">
+								<div style="padding-top: 10px">
+									<input type="number" min="0" max="12" placeholder="Nhập tháng đơn hàng bạn cần tìm !!!"
+										ng-model="thang" class="form-control">
+								</div>
+							</div>
+							<div class="form-group col-sm-5">
+								<div style="padding-top: 10px">
+									<input type="number" min="2000" placeholder="Nhập năm đơn hàng bạn cần tìm !!!"
+										ng-model="nam" class="form-control">
+								</div>
+							</div>
+							<div class="panel-footer text-right">
+								<button ng-click="timkiem()" class="btn btn-success">Tìm
+									Kiếm</button>
+							</div>
+						</div>
+						<table class="table table-striped table-bordered table-list">
+							<thead>
+								<tr>
+									<th>Tên tài khoản</th>
+									<th>Doanh thu</th>
+									<th>Số lượng</th>
+									<th>Ngày</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr ng-repeat="item in items">
+									<td>{{item.name}}</td>
+									<td>{{item.doanhThu}}</td>
+									<td>{{item.soLuong}}</td>
+									<td>{{item.date | date: 'dd-MM-yyyy'}}</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>

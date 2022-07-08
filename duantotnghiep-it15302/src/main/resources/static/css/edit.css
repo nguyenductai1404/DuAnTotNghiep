@@ -1,0 +1,141 @@
+capnhattk{
+	margin: 0;
+	padding: 0;
+	font-family: 'Roboto', sans-serif;
+	box-sizing: border-box;
+}
+
+#capnhattk {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+}
+#capnhattk .container {
+	position: relative;
+	margin-left: 40px;
+	min-width: 1100px;
+	min-height: 550px;
+	display: flex;
+}
+
+/*Hiá»‡u á»¨ng Hover Icon*/
+#capnhattk .container .containerinfo .sci li:hover a {
+	opacity: 1;
+}
+
+#capnhattk .container .containerForm {
+	position: absolute;
+	padding: 70px 50px;
+	background: #fff;
+	margin-left: 150px;
+	padding-left: 50px;
+	width: calc(70% - 200px);
+	height: 100%;
+}
+
+#capnhattk .container .containerForm h2 {
+	color: #0f3959;
+	font-size: 27px;
+	font-weight: 500;
+	text-align: center;
+}
+
+#capnhattk .container .containerForm .formBox {
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	padding-top: 30px;
+}
+
+#capnhattk .container .containerForm .formBox .inputBox {
+	position: relative;
+	margin: 0 0 35px 0;
+}
+
+#capnhattk .container .containerForm .formBox .inputBox.w50 {
+	width: 100%;
+}
+
+#capnhattk .container .containerForm .formBox .inputBox.w100 {
+	width: 100%;
+}
+
+#capnhattk .container .containerForm .formBox .inputBox textarea {
+	width: 100%;
+	padding: 5px 0;
+	resize: none;
+	font-size: 18px;
+	font-weight: 400;
+	color: #333;
+	border: none;
+	border-bottom: 1px solid #777;
+	outline: none;
+}
+
+#capnhattk .container .containerForm .formBox input {
+	width: 100%;
+	padding: 5px 0;
+	resize: none;
+	font-size: 18px;
+	font-weight: 400;
+	color: #333;
+	border: none;
+	border-bottom: 1px solid #777;
+	outline: none;
+}
+
+#capnhattk .container .containerForm .formBox .inputBox input[type="submit"] {
+	position: relative;
+	cursor: pointer;
+	background: #0f3959;
+	color: #fff;
+	border: none;
+	max-width: 150px;
+	padding: 12px;
+}
+
+#capnhattk .container .containerForm .formBox .inputBox input[type="submit"]:hover
+	{
+	background: #ff568c;
+}
+
+#capnhattk .container .containerForm .formBox .inputBox span {
+	position: absolute;
+	left: 0;
+	padding: 5px 0;
+	font-size: 18px;
+	font-weight: 400;
+	color: #333;
+	transition: 0.5s;
+	pointer-events: none;
+}
+
+#capnhattk .container .containerForm .formBox .inputBox input:focus ~span,
+#capnhattk .container .containerForm .formBox .inputBox textarea:focus ~span,
+#capnhattk .container .containerForm .formBox .inputBox input:valid ~span,
+#capnhattk .container .containerForm .formBox .inputBox textarea:valid ~span
+	{
+	transform: translateY(-20px);
+	font-size: 12px;
+	font-weight: 400;
+	letter-spacing: 1px;
+	color: #ff568c
+}
+
+#capnhattk .container .containerForm1 {
+	position: absolute;
+	padding: 70px 50px;
+	background: #fff;
+	margin-left: 720px;
+	padding-left: 50px;
+	width: calc(50% - 200px);
+	height: 100%;
+}
+
+#capnhattk .container .containerForm1 .formBoxImage {
+	padding-top: 27px;
+	margin-top: -45px;
+}

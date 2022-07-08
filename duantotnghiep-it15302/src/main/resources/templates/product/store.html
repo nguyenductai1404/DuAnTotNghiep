@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="~{/layout/index :: dynamic(~{::main})}">
+<body>
+	<main>
+		<div class="wrapper">
+			<div class="container_fullwidth">
+				<div class="container">
+					<div class="row">
+						<div th:replace="~{/product/_infostore :: product_infostore}"></div>
+						<div class="col-md-9">
+							<div class="products-list">
+								<div th:each="p: ${items}">
+									<div th:replace="~{/product/list :: product_list}"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div th:replace="~{/product/_commentstore :: product_commentstore}"></div>
+			</div>
+		</div>
+	</main>
+</body>
+</html>

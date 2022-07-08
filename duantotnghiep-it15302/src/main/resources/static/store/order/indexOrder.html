@@ -1,0 +1,63 @@
+<div class="col-md-10 col-md-offset-1">
+	<div class="panel panel-default panel-table">
+		<div class="panel-heading">
+			<div class="row">
+				<div class="col col-xs-6">
+					<h3 class="panel-title">Danh sách đặt hàng</h3>
+				</div>
+			</div>
+		</div>
+		<div class="panel-body">
+			<table class="table table-striped table-bordered table-list">
+				<thead>
+					<tr>
+						<th class="hidden-xs">Id đặt hàng</th>
+						<th>Tên</th>
+						<th>Địa chỉ</th>
+						<th>Người nhận</th>
+						<th>Địa chỉ người nhận</th>
+						<th>Số điện thoại</th>
+						<th>Tên cửa hàng</th>
+						<th>Tổng tiền</th>
+						<th>Ngày đặt hàng</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="item in pager.items">
+						<td>{{item.id}}</td>
+						<td>{{item.account.username}}</td>
+						<td>{{item.address}}</td>
+						<td>{{item.nguoinhan}}</td>
+						<td>{{item.diachinn}}</td>
+						<td>{{item.sdt}}</td>
+						<td>{{item.cuahang.tencuahang}}</td>
+						<td>{{item.tongtien}}</td>
+						<td>{{item.createDate}}</td>
+						<td>
+							<div class="btn-group btn-group-xs">
+								<button ng-click="trangthai(item.id)"
+									class="btn btn-warning">{{item.trangthai}}</button>
+							</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="panel-footer text-center">
+			<button ng-click="pager.first()" class="btn btn-danger">
+				<b class="glyphicon glyphicon-hand-up"></b>
+			</button>
+			<button ng-click="pager.prev()" class="btn btn-primary">
+				<b class="glyphicon glyphicon-hand-left"></b>
+			</button>
+			<button class="btn btn-success">{{pager.page + 1}} of
+				{{pager.count}}</button>
+			<button ng-click="pager.next()" class="btn btn-primary">
+				<b class="glyphicon glyphicon-hand-right"></b>
+			</button>
+			<button ng-click="pager.last()" class="btn btn-danger">
+				<b class="glyphicon glyphicon-hand-down"></b>
+			</button>
+		</div>
+	</div>
+</div>

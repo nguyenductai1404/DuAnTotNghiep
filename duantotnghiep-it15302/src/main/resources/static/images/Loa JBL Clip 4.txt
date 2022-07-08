@@ -1,0 +1,10 @@
+Thông số kỹ thuật
+Băng tần - SIM:	100Hz – 20khz
+Kích thước:	86.30 x 134.50 x 46.0mm
+Trọng lượng:	0.239kg
+Loại pin:	Lithium-ion polymer
+Thời gian sạc:	3 hours (5V/500ma)
+Thương hiệu:	JBL
+Công suất:	5W RMS
+Củ loa:	40mm / 1.5 inch
+Thời gian sử dụng:	lên tới 10h

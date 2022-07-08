@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="~{/layout/index :: dynamic(~{::main})}">
+<body>
+	<main>
+		<div class="wrapper">
+			<div class="container_fullwidth">
+				<div class="container">
+					<div class="row">
+						<div th:replace="~{/product/_menucates :: product_menu}"></div>
+						<div class="col-md-9">
+							<div class="banner">
+								<div class="bannerslide" id="bannerslide">
+									<ul class="slides">
+										<li><a href="#"> <img
+												src="../../images/banner-01.png" alt="" />
+										</a></li>
+										<li><a href="#"> <img
+												src="../../images/banner-02.png" alt="" />
+										</a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="clearfix"></div>
+							<div class="products-list">
+								<div th:each="p: ${items}">
+									<div th:replace="~{/product/list :: product_list}"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+</body>
+</html>

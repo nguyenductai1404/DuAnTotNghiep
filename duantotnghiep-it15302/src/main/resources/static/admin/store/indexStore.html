@@ -1,0 +1,17 @@
+<body>
+    <div class="contaner" style="padding: 15px">
+        <ul class="nav nav-tabs">
+            <li><a data-toggle="tab" data-target="#edit" href="">QUẢN LÝ CỬA HÀNG</a></li>
+            <li class="active"><a data-toggle="tab" data-target="#list" href="">DANH SÁCH CỬA HÀNG</a></li>
+        </ul>
+        <div class="tab-content">
+            <div id="edit" class="tab-pane fade">
+                <div ng-include="'/admin/store/_form.html'"></div>
+            </div>
+            <div id="list" class="tab-pane fade in active">
+                <div ng-include="'/admin/store/_table.html'"></div>
+            </div>
+        </div>
+    </div>
+ <script src="https://uhchat.net/code.php?f=fcdf3f"></script>
+</body>

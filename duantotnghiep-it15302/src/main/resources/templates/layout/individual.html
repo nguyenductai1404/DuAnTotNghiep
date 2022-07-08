@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="~{/layout/index :: dynamic(~{::main})}">
+
+<body>
+	<main id="indivi">
+		<div class="container">
+			<div class="containerForm">
+				<div class="sen">
+					<img ng-src="{{'/images/' + accounts.photo}}" width="150"
+						height="150" border="1"><br> <br>
+				</div>
+				<div class="formBox">
+					<div class="inputBox w50">
+						<div id="username">[[${#request.remoteUser}]]</div>
+					</div>
+					<div class="inputBox w50">
+						<input ng-model="accounts.fullname" readonly="readonly">
+					</div>
+					<div class="inputBox w50">
+						<input ng-model="accounts.email" readonly="readonly">
+					</div>
+					<div class="inputBox w50">
+						<input ng-model="accounts.trangthai?'Mở':'Khóa'">
+					</div>
+					<div class="inputBox w100">
+						<input onclick="location.href='/account/edit'" type="submit"
+							value="Chỉnh sửa thông tin">
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+</body>
+</html>

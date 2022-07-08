@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="~{/layout/index :: dynamic(~{::main})}">
+<body>
+	<main id="chitietdonhang">
+		<div class="container" style="padding-top: 20px">
+			<div class="containerForm">
+				<div class="panel panel-primary">
+					<div class="panel-heading" style="background-color: #0066CC">
+						ĐƠN HÀNG CỦA BẠN ĐÃ MUA</div>
+					<table class="table">
+						<thead>
+							<tr>
+								<th>No.</th>
+								<th>Id đặt hàng</th>
+								<th>Ngày đặt hàng</th>
+								<th>Địa chỉ nhận hàng</th>
+								<th>Cửa hàng</th>
+								<th>Giá</th>
+								<th>Trạng thái</th>
+								<th>Sửa</th>
+								<th>Hủy</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr th:each="order, state : ${orders}">
+								<td>[[${state.index}]]</td>
+								<td>[[${order.id}]]</td>
+								<td>[[${order.createDate}]]</td>
+								<td>[[${order.address}]]</td>
+								<td>[[${order.cuahang.tencuahang}]]</td>
+								<td>[[${#numbers.formatDecimal(order.tongtien, 0, 'COMMA',
+									0, 'POINT')}]]</td>
+								<td>[[${order.trangthai}]]</td>
+								<td><a th:href="@{|/order/detail/${order.id}|}"
+									class="btn btn-default"> <b
+										class="glyphicon glyphicon-search"></b>
+								</a></td>
+								<td th:if="${order.trangthai != 'Đã giao hàng'}"><a th:href="@{|/order/delete/${order.id}|}"
+									class="btn btn-default"> <b
+										class="glyphicon glyphicon-trash"></b>
+								</a></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</main>
+</body>
+</html>

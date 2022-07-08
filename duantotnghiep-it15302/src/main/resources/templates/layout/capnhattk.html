@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="~{/layout/index :: dynamic(~{::main})}">
+<body>
+	<main id="capnhattk">
+		<div class="container" >
+			<form action="" name="frmBonus">
+				<div class="containerForm">
+					<h2>Chỉnh sửa thông tin của bạn</h2>
+					<div class="formBox">
+						<div class="inputBox w50">
+							<div id="username">[[${#request.remoteUser}]]</div>
+						</div>
+						<div class="inputBox w50">
+							<input type="text" ng-model="fullname" name="fullname" required>
+							<span>Họ và tên</span>
+						</div>
+						<div class="inputBox w50">
+							<input type="email" ng-model="email" name="email" required>
+							<span>Email</span>
+						</div>
+						<div class="inputBox w100">
+							<input ng-show="frmBonus.$valid" ng-click="capnhattk()"
+								type="submit" value="Cập nhật">
+						</div>
+						<div class="inputBox w100" ng-show="frmBonus.$invalid">Vui lòng nhập đầy đủ thông tin</div>
+					</div>
+				</div>
+				<div class="containerForm1">
+					<div class="formBoxImage">
+						<br> <br> <label for="image"> <img
+							ng-src="{{'/images/' + photo}}"
+							style="width: 200px; height: 200px">
+						</label>
+						<div>
+							<br> Hình ảnh <input type="file" class="form-control"
+								id="image"
+								onchange="angular.element(this).scope().imageChanged(this.files)">
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</main>
+</body>
+</html>

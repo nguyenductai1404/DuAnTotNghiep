@@ -1,0 +1,21 @@
+
+.modal-body .mb-3 .mota2{
+    color:black;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+
+.modal-body .mb-3 .mota3{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 19px;
+}
+
+.modal-body .mb-3 .img1{
+    width: 450px;
+    height: 300px;
+}
+.modal-footer {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+}

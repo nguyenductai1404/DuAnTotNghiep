@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="~{/layout/index :: dynamic(~{::main})}">
+<body>
+	<main>
+		<div class="wrapper">
+			<div class="clearfix"></div>
+			<div class="container_fullwidth">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<h3 class="title">Giỏ hàng của bạn</h3>
+							<div class="clearfix"></div>
+							<table class="shop-table" th:fragment="shopping_cart">
+								<thead>
+									<tr>
+										<th>Hình ảnh</th>
+										<th>Tên sản phẩm</th>
+										<th>Giá</th>
+										<th>Tên cửa hàng</th>
+										<th>Số lượng</th>						
+										<th>Tổng tiền</th>
+										<th>Xóa</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr ng-repeat="item in cart.items">
+										<td><a th:href="@{|/product/detail/{{item.id}}?cid={{item.catesmall.category.id}}|}">
+											<img src="../../images/{{item.image}}"></a></td>
+										<td>
+											<div class="shop-details">
+												<div class="productname">{{item.name}}</div>
+											</div>
+										</td>
+										<td>
+											<h5>{{item.price | number:2}}</h5>
+										</td>
+										<td>
+											<div class="shop-details">
+												<div class="productname">{{item.cuahang.tencuahang}}</div>
+											</div>
+										</td>
+										<td><input ng-change="cart.save(item.id)" ng-model="item.qty" type="number" min="1" style="width: 70px"></td>
+										<td class="red">{{item.qty*item.price | number : 2}}</td>
+										<td>
+											<button ng-click="cart.remove(item.id)"
+												class="btn btn-sm btn-danger">
+												<i class="glyphicon glyphicon-trash"></i>
+											</button>
+										</td>
+									</tr>
+								</tbody>
+								<tfoot>
+									<tr>
+										<td colspan="6">
+											<button onClick="location.href='/product/list'" class="pull-left">Tiếp tục mua hàng</button>
+											<button onClick="location.href='/order/checkout'" class=" pull-right">Đặt hàng</button>
+										</td>
+									</tr>
+								</tfoot>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+</body>
+</html>

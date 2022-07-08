@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="~{/layout/index :: dynamic(~{::main})}">
+<body>
+	<main>
+		<div class="wrapper">
+			<div class="container_fullwidth" th:each="p : ${items}">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="products-details">
+								<div class="preview_image">
+									<div class="preview-small">
+										<img id="zoom_03" th:src="@{|../../images/${p.image}|}"
+											width="300px" style="margin-left: 15px">
+									</div>
+									<div class="thum-image">
+										<ul id="gallery_01" class="prev-thum">
+											<th:block th:each="i : ${image}">
+												<li><a
+													th:href="@{|/product/detail/${i.id}?cid=${i.catesmall.category.id}|}">
+														<img th:src="@{|../../images/${i.image}|}" alt="">
+												</a></li>
+											</th:block>
+										</ul>
+										<a class="control-left" id="thum-prev"
+											href="javascript:void(0);"> <i class="fa fa-chevron-left">
+										</i>
+										</a> <a class="control-right" id="thum-next"
+											href="javascript:void(0);"> <i
+											class="fa fa-chevron-right"> </i>
+										</a>
+									</div>
+								</div>
+								<div class="products-description">
+									<h5 class="name" th:utext="${p.name}"></h5>
+									<p>
+										Tên cửa hàng: <a th:href="@{|/product/store/${p.cuahang.id}|}"><span
+											style="color: red;" th:text="${p.cuahang.tencuahang}"></span></a>
+									</p>
+									<th:block th:each="s : ${spe}">
+										<p th:utext="${s.tenthuoctinh} + ' : ' + ${s.giatri}"></p>
+									</th:block>
+									<hr class="border">
+									<div class="price">
+										Price : <span class="new_price"
+											th:utext="${#numbers.formatDecimal(p.price, 1, 'COMMA', 0, 'POINT')} + ' VNĐ'">
+										</span>
+									</div>
+									<hr class="border">
+									<div class="wided">
+										<div class="price">
+											Số lượng : <span style="font-size: 18px; color: red"
+												th:utext="${p.soluong}"> </span>
+										</div>
+										<div class="button_group">
+											<th:block th:if="${#request.remoteUser}">
+												<button class="button"
+													th:unless="${#arrays.contains(like, p.id)}"
+													th:attr="ng-click=@{|products.like(${p.id})|}">Like</button>
+												<button class="button"
+													th:if="${#arrays.contains(like, p.id)}"
+													th:attr="ng-click=@{|products.dislike(${p.id})|}">Dislike</button>
+											</th:block>
+											<button class="button"
+												th:attr="ng-click=@{|cart.add(${p.id})|}">Thêm vào
+												giỏ</button>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="clearfix"></div>
+							<div class="tab-box">
+								<div id="tabnav">
+									<ul>
+										<li><a href="#Descraption"> Mô tả </a></li>
+										<li><a href="#image"> Hình ảnh </a></li>
+									</ul>
+								</div>
+								<div class="tab-content-wrap">
+									<div class="tab-content" id="Descraption"
+										th:each="in : ${introduce}">
+										<p style="font-size: 15px" th:utext="${in.data}"></p>
+									</div>
+									<div class="tab-content" id="image">
+										<div class="container">
+											<div class="row">
+												<div class="col-md-2" th:each="ima : ${images}">
+													<div class="thumbnail">
+														<img th:src="@{|../../images/${ima.nameimage}|}">
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div th:replace="~{/product/_comment :: product_comment}"></div>
+				</div>
+			</div>
+		</div>
+	</main>
+</body>
+</html>

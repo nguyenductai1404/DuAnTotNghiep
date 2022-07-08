@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="~{/layout/index :: dynamic(~{::main})}">
+<body>
+	<main>
+		<div class="container_fullwidth">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="checkout-page">
+							<ol class="checkout-steps">
+								<li class="steps"><a href="/security/login"
+									class="step-title"> 01. Đăng nhập </a></li>
+								<li class="steps active"><a href="/order/checkout"
+									class="step-title"> 02. Thông tin thanh toán </a>
+									<div class="step-description">
+										<form>
+											<div th:replace="~{/cart/chitiet :: shopping_cart}"></div>
+											<div class="row">
+												<div class="your-details">
+													<h5>Thông tin chi tiết về bạn</h5>
+													<div class="form-row">
+														<div class="form-control" id="username">[[${#request.remoteUser}]]</div>
+													</div>
+													<div class="form-row">
+														<div class="form-control">
+															Ngày đặt hàng <strong class="red"> * </strong>
+															{{order.createDate | date: 'dd-MM-yyyy'}}
+														</div>
+													</div>
+													<div class="form-row">
+														<label class="lebel-abs"> Người nhận <strong
+															class="red"> * </strong>
+														</label> <input type="text" class="input namefild"
+															ng-model="order.nguoinhan" required>
+													</div>
+													<div class="form-row">
+														<label class="lebel-abs"> Số điện thoại <strong
+															class="red"> * </strong>
+														</label> <input type="number" min="0" class="input namefild"
+															ng-model="order.sdt" required>
+													</div>
+													<div class="form-row">
+														<label class="lebel-abs"> Địa chỉ <strong
+															class="red"> * </strong>
+														</label> <input type="text" class="input namefild"
+															ng-model="order.address" required>
+													</div>
+													<div class="form-row">
+														<select ng-model="tinh" id="bankcode" class="form-control" style="margin-bottom: 10px; margin-left: 0px">
+															<option value="">Địa chỉ giao hàng: Tỉnh thành</option>
+															<option value="Cần Thơ">Cần thơ</option>
+														</select>
+													</div>
+													<div class="form-row">
+														<select ng-model="quan" id="bankcode" class="form-control" style="margin-bottom: 10px; margin-left: 0px">
+															<option value=""> Địa chỉ giao hàng: Quận</option>
+															<option value="An Khánh">An Khánh</option>
+															<option value="Ninh Kiều">Ninh Kiều</option>
+														</select>
+													</div>
+													<div class="form-row">
+														<select ng-model="duong" id="bankcode" class="form-control" style="margin-bottom: 10px; margin-left: 0px">
+															<option value="">Địa chỉ giao hàng: Đường</option>
+															<option value="Nguyễn Văn Linh">Nguyễn Văn Linh</option>
+															<option value="3 tháng 2">3 tháng 2</option>
+														</select>
+													</div>
+													<div class="form-row">
+														<label class="lebel-abs"> Mã giảm giá <strong
+															class="red"> * </strong>
+														</label> <input type="text" class="input namefild"
+															ng-model="order.codesale.code">
+													</div>
+													<div class="form-row">
+														<div class="form-control">{{cart.amount | number}}
+															VNĐ</div>
+													</div>
+													<div class="form-row">
+														<select ng-model="bankcode" id="bankcode" class="form-control" style="margin-bottom: 10px; margin-left: 0px">
+															<option value="">Hình thức thanh toán</option>
+															<option value="TT">Thanh toán trực tiếp</option>
+															<option value="NCB">Ngân hàng NCB</option>
+														</select>
+													</div>
+													<i class="pull-left text-danger" th:text="${pay}"></i>
+													<div class="text-right">
+														<button ng-click="order.pay()">Mua hàng</button>
+													</div>
+												</div>
+											</div>
+										</form>
+									</div></li>
+							</ol>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+</body>
+</html>

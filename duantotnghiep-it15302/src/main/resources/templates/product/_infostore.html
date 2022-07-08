@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<body>
+	<div class="col-md-3" th:fragment="product_infostore">
+		<div class="branch leftbar" th:each="p: ${store}">
+			<div style="text-align: center;">
+				<a>
+					<img width="50%" height="50%" th:src="@{|../../images/${p.image}|}">
+				</a>
+			</div>
+			<p>
+				Tên cửa hàng: <span th:text="${p.tencuahang}"></span>
+			</p>
+			<p>
+				Tài khoản sở hữu: <span th:text="${p.account.username}"></span>
+			</p>
+		</div>
+		<div class="leftbanner">
+			<img src="../../images/banner-small-01.png" alt="">
+		</div>
+	</div>
+</body>
+</html>

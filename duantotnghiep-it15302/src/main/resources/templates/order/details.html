@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="~{/layout/index :: dynamic(~{::main})}">
+
+<body>
+	<main th:object="${order}" style="padding: 20px">
+		<div class="panel panel-primary">
+			<div class="panel-heading" style="background-color: #0066CC; color: white" >THÔNG TIN ĐẶT HÀNG</div>
+			<div class="panel-body">
+				<div class="row">
+					<div class="form-group col-sm-6">
+						<div>Số đơn hàng:</div>
+						<input class="form-control" th:field="*{id}" readonly>
+					</div>
+					<div class="form-group col-sm-6">
+						<div>Người đặt hàng:</div>
+						<input class="form-control" th:field="*{account.username}"
+							readonly>
+					</div>
+					<div class="form-group col-sm-6">
+						<div>Ngày đặt hàng:</div>
+						<input class="form-control" th:field="*{createDate}" readonly>
+					</div>
+					<div class="form-group col-sm-6">
+						<div>Địa chỉ đặt hàng</div>
+						<input class="form-control" th:field="*{address}"  readonly>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="panel panel-primary">
+			<div class="panel-heading" style="background-color: #0066CC; color: white">Bảng đơn hàng</div>
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Id đơn hàng</th>
+						<th>Tên đơn hàng</th>
+						<th>Tên cửa hàng</th>
+						<th>Giá</th>
+						<th>Số lượng</th>
+						<th>Tổng tiền</th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="detail : *{orderDetails}" th:object="${detail}">
+						<td>[[*{product.id}]]</td>
+						<td>[[*{product.name}]]</td>
+						<td>[[*{product.cuahang.tencuahang}]]</td>
+						<td>[[*{#numbers.formatDecimal(price, 0, 'COMMA', 2,
+							'POINT')}]]</td>
+						<td>[[*{quantity}]]</td>
+						<td>[[*{#numbers.formatDecimal(price*quantity, 0, 'COMMA',
+							0, 'POINT')}]]</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</main>
+</body>
+
+</html>

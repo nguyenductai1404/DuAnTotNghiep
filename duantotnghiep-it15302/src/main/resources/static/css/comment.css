@@ -1,0 +1,127 @@
+#comment .card {
+	border: none;
+	box-shadow: 5px 6px 6px 2px #e9ecef;
+	border-radius: 4px
+}
+
+#comment .dots {
+	height: 4px;
+	width: 4px;
+	margin-bottom: 2px;
+	background-color: #bbb;
+	border-radius: 50%;
+	display: inline-block
+}
+
+#comment .badge {
+	padding: 7px;
+	padding-right: 9px;
+	padding-left: 16px;
+	box-shadow: 5px 6px 6px 2px #e9ecef
+}
+
+
+#comment .user-img {
+	margin-top: 4px
+}
+
+#comment .check-icon {
+	font-size: 17px;
+	color: #c3bfbf;
+	top: 1px;
+	position: relative;
+	margin-left: 3px
+}
+
+#comment .form-check-input {
+	margin-top: 6px;
+	margin-left: -24px !important;
+	cursor: pointer
+}
+
+#comment .form-check-input:focus {
+	box-shadow: none
+}
+
+#comment .icons i {
+	margin-left: 8px
+}
+
+#comment .reply {
+	margin-left: 12px
+}
+
+#comment .reply small {
+	color: #b7b4b4
+}
+
+#comment .reply small:hover {
+	color: green;
+	cursor: pointer
+}
+#comment .detailBox {
+    width:590px;
+    border:1px solid #bbb;
+    margin:50px;
+}
+#comment .actionBox {
+    border-top:1px dotted #bbb;
+    padding:10px;
+}
+#comment .titleBox {
+    background-color:#fdfdfd;
+    padding:10px;
+}
+#comment .titleBox label{
+  color:#444;
+  margin:0;
+  display:inline-block;
+}
+
+#comment .commentBox {
+    padding:10px;
+    border-top:1px dotted #bbb;
+}
+#comment .commentBox .form-group:first-child, .actionBox .form-group:first-child {
+    width:80%;
+}
+#comment .commentBox .form-group:nth-child(2), .actionBox .form-group:nth-child(2) {
+    width:18%;
+}
+#comment .actionBox .form-group * {
+    width:550px;
+}
+#comment .taskDescription {
+    margin-top:10px 0;
+}
+#comment .commentList {
+    padding:0;
+    list-style:none;
+    max-height:200px;
+    overflow:auto;
+}
+#comment .commentList li {
+    margin:0;
+    margin-top:10px;
+}
+#comment .commentList li > div {
+    display:table-cell;
+}
+#comment .commenterImage {
+    width:30px;
+    margin-right:5px;
+    height:100%;
+    float:left;
+}
+#comment .commenterImage img {
+    width:100%;
+    border-radius:50%;
+}
+#comment .commentText p {
+    margin:0;
+}
+#comment .sub-text {
+    color:#aaa;
+    font-family:verdana;
+    font-size:11px;
+}

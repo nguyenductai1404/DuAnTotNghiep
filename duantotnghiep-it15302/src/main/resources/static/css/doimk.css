@@ -1,0 +1,207 @@
+doimk {
+	margin: 0;
+	padding: 0;
+	font-family: 'Roboto', sans-serif;
+	box-sizing: border-box;
+}
+
+#doimk {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+}
+
+#doimk::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 50%;
+	height: 100%;
+}
+
+#doimk .container {
+	position: relative;
+	min-width: 1100px;
+	min-height: 550px;
+	display: flex;
+}
+
+#doimk .container .containerinfo {
+	position: absolute;
+	width: 350px;
+	height: calc(100% - 80px);
+	background: #0f3959;
+	z-index: 1;
+	padding: 40px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2);
+}
+
+#doimk .container .containerinfo h2 {
+	color: #fff;
+	font-size: 24px;
+	margin: 20px 0;
+}
+
+#doimk .container .containerinfo li {
+	position: relative;
+	list-style: none;
+	display: flex;
+	margin: 20px 0;
+	cursor: pointer;
+	align-items: flex-start;
+}
+
+#doimk .container .containerinfo li span {
+	color: #fff;
+	margin-left: 10px;
+	font-weight: 300;
+	opacity: 0.5;
+	font-size: 20px;
+}
+/*Hiệu Ứng Hover Cho Thẻ Li*/
+#doimk .container .containerinfo li:hover span {
+	opacity: 1;
+}
+
+#doimk .container .containerinfo .sci {
+	position: relative;
+	display: flex;
+}
+
+#doimk .container .containerinfo .sci li {
+	list-style: none;
+	margin-right: 15px;
+}
+
+#doimk .container .containerinfo .sci li a {
+	text-decoration: none;
+	opacity: 0.5;
+	color: #fff;
+	font-size: 32px;
+}
+/*Hiệu Ứng Hover Icon*/
+#doimk .container .containerinfo .sci li:hover a {
+	opacity: 1;
+}
+
+#doimk .container .containerForm {
+	position: absolute;
+	padding: 70px 50px;
+	background: #fff;
+	margin-left: 150px;
+	padding-left: 50px;
+	width: calc(85% - 150px);
+	height: 100%;
+	box-shadow: 0 50px 50px rgba(0, 0, 0, 0.5);
+}
+
+form .container .containerForm h2 {
+	color: #0f3959;
+	font-size: 24px;
+	font-weight: 500;
+}
+
+#doimk .container .containerForm .formBox {
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	padding-top: 30px;
+}
+
+#doimk .container .containerForm .formBox .inputBox {
+	position: relative;
+	margin: 0 0 35px 0;
+}
+
+#doimk .container .containerForm .formBox .inputBox.w50 {
+	width: 100%;
+}
+
+#doimk .container .containerForm .formBox .inputBox.w100 {
+	width: 100%;
+}
+
+#doimk .container .containerForm .formBox .inputBox textarea {
+	width: 100%;
+	padding: 5px 0;
+	resize: none;
+	font-size: 18px;
+	font-weight: 400;
+	color: #333;
+	border: none;
+	border-bottom: 1px solid #777;
+	outline: none;
+}
+
+#doimk .container .containerForm .formBox input {
+	width: 100%;
+	padding: 5px 0;
+	resize: none;
+	font-size: 18px;
+	font-weight: 400;
+	color: #333;
+	border: none;
+	border-bottom: 1px solid #777;
+	outline: none;
+}
+
+#doimk .container .containerForm .formBox div {
+	text-align: center;
+	font-size: 30px;
+	font-weight: 400;
+	color: #333;
+	border: none;
+}
+
+#doimk .container .containerForm .formBox .inputBox textarea {
+	min-height: 120px;
+}
+
+#doimk .container .containerForm .formBox .inputBox input[type="submit"] {
+	position: relative;
+	cursor: pointer;
+	background: #0f3959;
+	color: #fff;
+	border: none;
+	max-width: 1500px;
+	padding: 12px;
+}
+
+#doimk .container .containerForm .formBox .inputBox input[type="submit"]:hover
+	{
+	background: #ff568c;
+}
+
+#doimk .container .containerForm .formBox .inputBox span {
+	position: absolute;
+	left: 0;
+	padding: 5px 0;
+	font-size: 18px;
+	font-weight: 400;
+	color: #333;
+	transition: 0.5s;
+	pointer-events: none;
+}
+
+#doimk .container .containerForm .formBox .inputBox input:focus ~ span,
+	#doimk .container .containerForm .formBox .inputBox textarea:focus ~ span,
+	#doimk .container .containerForm .formBox .inputBox input:valid ~ span,
+	#doimk .container .containerForm .formBox .inputBox textarea:valid ~ span
+	{
+	transform: translateY(-20px);
+	font-size: 12px;
+	font-weight: 400;
+	letter-spacing: 1px;
+	color: #ff568c
+}
+
+h2 {
+	text-align: center;
+}

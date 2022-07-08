@@ -1,0 +1,213 @@
+indivi {
+	margin: 0;
+	padding: 0;
+	font-family: 'Roboto', sans-serif;
+	box-sizing: border-box;
+}
+
+#indivi .sen {
+	margin-top: 0px;
+	text-align: center;
+}
+
+#indivi {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+}
+
+#indivi::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 50%;
+	height: 100%;
+}
+
+#indivi .container {
+	position: relative;
+	min-width: 1100px;
+	min-height: 550px;
+	display: flex;
+}
+
+#indivi .container .containerinfo {
+	position: absolute;
+	width: 350px;
+	height: calc(100% - 80px);
+	background: #0f3959;
+	z-index: 1;
+	padding: 40px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2);
+}
+
+#indivi .container .containerinfo h2 {
+	color: #fff;
+	font-size: 24px;
+	margin: 20px 0;
+}
+
+#indivi .container .containerinfo li {
+	position: relative;
+	list-style: none;
+	display: flex;
+	margin: 20px 0;
+	cursor: pointer;
+	align-items: flex-start;
+}
+
+#indivi .container .containerinfo li span {
+	color: #fff;
+	margin-left: 10px;
+	font-weight: 300;
+	opacity: 0.5;
+	font-size: 20px;
+}
+/*Hiệu Ứng Hover Cho Thẻ Li*/
+#indivi .container .containerinfo li:hover span {
+	opacity: 1;
+}
+
+#indivi .container .containerinfo .sci {
+	position: relative;
+	display: flex;
+}
+
+#indivi .container .containerinfo .sci li {
+	list-style: none;
+	margin-right: 15px;
+}
+
+#indivi .container .containerinfo .sci li a {
+	text-decoration: none;
+	opacity: 0.5;
+	color: #fff;
+	font-size: 32px;
+}
+/*Hiệu Ứng Hover Icon*/
+#indivi .container .containerinfo .sci li:hover a {
+	opacity: 1;
+}
+
+#indivi .container .containerForm {
+	position: absolute;
+	padding: 30px 50px;
+	background: #fff;
+	margin-left: 150px;
+	padding-left: 50px;
+	width: calc(85% - 150px);
+	height: 100%;
+	box-shadow: 0 50px 50px rgba(0, 0, 0, 0.5);
+}
+
+form .container .containerForm h2 {
+	color: #0f3959;
+	font-size: 24px;
+	font-weight: 500;
+}
+
+#indivi .container .containerForm .formBox {
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	padding-top: 30px;
+}
+
+#indivi .container .containerForm .formBox .inputBox {
+	position: relative;
+	margin: 0 0 35px 0;
+}
+
+#indivi .container .containerForm .formBox .inputBox.w50 {
+	width: 100%;
+}
+
+#indivi .container .containerForm .formBox .inputBox.w100 {
+	width: 100%;
+}
+
+#indivi .container .containerForm .formBox .inputBox textarea {
+	width: 100%;
+	padding: 5px 0;
+	resize: none;
+	font-size: 18px;
+	font-weight: 400;
+	color: #333;
+	border: none;
+	border-bottom: 1px solid #777;
+	outline: none;
+}
+
+#indivi .container .containerForm .formBox input {
+	width: 100%;
+	padding: 0px 0;
+	resize: none;
+	font-size: 18px;
+	font-weight: 400;
+	color: #333;
+	border: none;
+	border-bottom: 1px solid #777;
+	outline: none;
+}
+
+#indivi .container .containerForm .formBox div {
+	text-align: center;
+	font-size: 30px;
+	font-weight: 400;
+	color: #333;
+	border: none;
+}
+
+#indivi .container .containerForm .formBox .inputBox textarea {
+	min-height: 120px;
+}
+
+#indivi .container .containerForm .formBox .inputBox input[type="submit"]
+	{
+	position: relative;
+	cursor: pointer;
+	background: #0f3959;
+	color: #fff;
+	border: none;
+	max-width: 1500px;
+	padding: 12px;
+}
+
+#indivi .container .containerForm .formBox .inputBox input[type="submit"]:hover
+	{
+	background: #ff568c;
+}
+
+#indivi .container .containerForm .formBox .inputBox span {
+	position: absolute;
+	left: 0;
+	padding: 5px 0;
+	font-size: 18px;
+	font-weight: 400;
+	color: #333;
+	transition: 0.5s;
+	pointer-events: none;
+}
+
+#indivi .container .containerForm .formBox .inputBox input:focus ~ span,
+	#indivi .container .containerForm .formBox .inputBox textarea:focus ~
+	span, #indivi .container .containerForm .formBox .inputBox input:valid 
+	~ span, #indivi .container .containerForm .formBox .inputBox textarea:valid 
+	~ span {
+	transform: translateY(-20px);
+	font-size: 12px;
+	font-weight: 400;
+	letter-spacing: 1px;
+	color: #ff568c
+}
+
+h2 {
+	text-align: center;
+}

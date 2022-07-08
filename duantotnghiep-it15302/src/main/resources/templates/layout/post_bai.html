@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="~{/layout/index :: dynamic(~{::main})}">
+<body>
+	<main>
+		<section id="post">
+			<div class="container" style="padding: 20px;">
+				<div class="comment" style="width: 1000px; margin-left: 50px">
+					<form id="algin-form">
+						<div class="form-group">
+							<h4>ĐĂNG BÀI VIẾT</h4>
+							<textarea name="msg" msg cols="30" rows="5" ng-model="noidung"
+								class="form-control" style="background-color: white;"></textarea>
+						</div>
+						<div class="form-group">
+							<label for="name">Đính kèm ảnh:</label> <br><input type="file"
+								class="form-control" id="photo"
+								onchange="angular.element(this).scope().imageChanged(this.files)">
+						</div>
+						<div class="text-right">
+							<button ng-click="tintuc.post()">Đăng bài</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</section>
+	</main>
+</body>
+</html>

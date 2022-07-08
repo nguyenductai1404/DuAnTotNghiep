@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="~{/layout/index :: dynamic(~{::main})}">
+<body>
+	<main>
+		<div class="wrapper">
+			<div class="container_fullwidth">
+				<div class="container">
+					<div class="row" th:each="p : ${items}">
+						<div class="tab-content">
+							<div class="col-md-2">
+								<img th:src="@{|../../images/${p.image}|}" width="110px">
+							</div>
+							<div class="col-md-10">
+								<h5 class="name" th:utext="${p.account.username}"></h5>
+								<br>
+								<p th:utext="${p.noidung}"></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+</body>
+</html>

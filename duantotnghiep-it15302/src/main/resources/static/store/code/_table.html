@@ -1,0 +1,63 @@
+<h3 class="text-center">Quản lý code</h3>
+<div class="panel panel-default">
+	<div class="panel panel-default panel-table">
+		<div class="panel-heading">
+			<div class="row">
+				<div class="col col-xs-6">
+					<h3 class="panel-title">Danh sách code</h3>
+				</div>
+			</div>
+		</div>
+		<div class="panel-body">
+			<table class="table table-striped table-bordered table-list">
+				<thead>
+					<tr>
+						<th class="hidden-xs">Id code</th>
+						<th>Tài khoản</th>
+						<th>Code</th>
+						<th>Ngày bắt đầu</th>
+						<th>Ngày hết hạn</th>
+						<th>Phần trăm</th>
+						<th>Trạng thái</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="item in pager.items">
+						<td>{{item.id}}</td>
+						<td>{{item.cuahang.account.username}}</td>
+						<td>{{item.code}}</td>
+						<td>{{item.starday}}</td>
+						<td>{{item.endday}}</td>
+						<td>{{item.percents}}</td>
+						<td>{{item.trangthai}}</td>
+						<td>
+
+							<button ng-click="edit()"
+								class="btn btn-warning glyphicon glyphicon-save" style="height: 30px ; width: 50px"></button>
+						</td>
+						<td>
+							<button ng-click="delete(item)"
+								class="btn btn-danger  	glyphicon glyphicon-trash" style="height: 30px ; width: 50px"></button>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="panel-footer text-center">
+			<button ng-click="pager.first()" class="btn btn-danger">
+				<b class="glyphicon glyphicon-hand-up"></b>
+			</button>
+			<button ng-click="pager.prev()" class="btn btn-primary">
+				<b class="glyphicon glyphicon-hand-left"></b>
+			</button>
+			<button class="btn btn-success">{{pager.page + 1}} of
+				{{pager.count}}</button>
+			<button ng-click="pager.next()" class="btn btn-primary">
+				<b class="glyphicon glyphicon-hand-right"></b>
+			</button>
+			<button ng-click="pager.last()" class="btn btn-danger">
+				<b class="glyphicon glyphicon-hand-down"></b>
+			</button>
+		</div>
+	</div>
+</div>

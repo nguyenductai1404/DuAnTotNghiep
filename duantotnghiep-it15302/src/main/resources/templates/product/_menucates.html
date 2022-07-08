@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<body>
+	<div class="col-md-3" th:fragment="product_menu">
+		<div class="branch leftbar">
+			<ul th:each="c : ${catesmall}">
+				<li><a
+					th:href="@{|/products/cate/${c.name}?cateid=${c.category.id}|}">[[${c.name}]]</a></li>
+			</ul>
+		</div>
+		<div class="price-filter leftbar">
+			<h3 class="title">Price</h3>
+			<form class="pricing" action="/products/tkprice">
+				<label>$ <input placeholder="Giá Min" style="width: 150px; margin-bottom: 10px" type="number" name="min"></label> 
+				<label>$ <input placeholder="Giá Max" style="width: 150px" type="number" name="max"></label> 
+				<input type="submit" value="Go">
+			</form>
+		</div>
+		<div class="leftbanner">
+			<img src="../../images/banner-small-01.png" alt="">
+		</div>
+	</div>
+</body>
+</html>

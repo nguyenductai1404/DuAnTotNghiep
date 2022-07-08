@@ -1,0 +1,66 @@
+<div>
+	<div class="panel panel-default">
+		<div class="panel-heading"
+			style="color: white; background-color: #0066CC">DANH SÁCH CỬA
+			HÀNG</div>
+		<table class="table table-condensed">
+			<div>
+				<div class="form-group col-sm-9">
+					<div style="padding-top: 10px">
+						<input placeholder="Nhập tên cửa hàng bạn cần tìm !!!"
+							ng-model="form.name" class="form-control">
+					</div>
+				</div>
+				<div class="panel-footer text-right">
+					<button ng-click="timkiem()" class="btn btn-success">Tìm
+						Kiếm</button>
+				</div>
+			</div>
+			<thead class="bg-success" style="font-variant: small-caps;">
+				<tr>
+					<th>Id cửa hàng</th>
+					<th>Tên cửa hàng</th>
+					<th>Tên tài khoản</th>
+					<th>Trạng thái?</th>
+					<th class="glyphicon glyphicon-wrench"></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="item in pager.items">
+					<td>{{item.id}}</td>
+					<td>{{item.tencuahang}}</td>
+					<td>{{item.account.username}}</td>
+					<td>{{item.trangthai?'Có':'Không'}}</td>
+					<td>
+						<div class="btn-group btn-group-xs">
+							<button ng-click="edit(item)" class="glyphicon glyphicon-edit"
+								style="background: #50C7C7;"></button>
+
+							<div class="btn-group btn-group-xs">
+								<button ng-click="delete(item)"
+									class="glyphicon glyphicon-trash "
+									style="background: #50C7C7; text-align: center;"></button>
+							</div>
+						</div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="panel-footer text-center">
+			<button ng-click="pager.first()" class="btn btn-danger">
+				<b class="glyphicon glyphicon-hand-up"></b>
+			</button>
+			<button ng-click="pager.prev()" class="btn btn-primary">
+				<b class="glyphicon glyphicon-hand-left"></b>
+			</button>
+			<button class="btn btn-success">{{pager.page + 1}} of
+				{{pager.count}}</button>
+			<button ng-click="pager.next()" class="btn btn-primary">
+				<b class="glyphicon glyphicon-hand-right"></b>
+			</button>
+			<button ng-click="pager.last()" class="btn btn-danger">
+				<b class="glyphicon glyphicon-hand-down"></b>
+			</button>
+		</div>
+	</div>
+</div>

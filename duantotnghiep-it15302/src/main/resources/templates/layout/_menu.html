@@ -1,0 +1,100 @@
+<div xmlns:th="http://www.thymeleaf.org">
+	<div class="header">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-2 col-sm-2">
+					<div class="them_logo">
+						<a href="/home/index"><img src="../../images/logo1-test.png"
+							alt="Young Creative"></a>
+					</div>
+				</div>
+				<div class="col-md-10 col-sm-10">
+					<div class="header_top">
+						<div class="row">
+							<div class="col-md-6">
+								<ul class="topmenu">
+									<li><a href="/home/contact">Liên hệ</a></li>
+									<li><a href="/home/tintuc">Tin tức</a></li>
+									<li><a href="/home/huongdan">Hướng Dẫn</a></li>
+									<li><a href="/home/gioithieu">Giới Thiệu</a></li>
+									<li><a href="/home/hotro">Hỗ trợ</a></li>
+								</ul>
+							</div>
+							<div class="col-md-6">
+								<ul class="usermenu" th:unless="${#request.remoteUser}">
+									<li><a href="/security/login" class="log">Đăng nhập</a></li>
+									<li><a href="/security/dangky" class="reg">Đăng ký</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="clearfix"></div>
+					<div class="header_bottom">
+						<ul class="option">
+							<li id="search" class="search">
+								<form action="/products/tkname">
+									<button class="search-submit"></button><input
+										class="search-input" placeholder="Nhập sản phẩm bạn tìm kiếm ..."
+										type="text" name="name">
+								</form>
+							</li>
+							<li class="option-cart"><a href="#" class="cart-icon"> <span
+									class="cart_no">{{cart.count}}</span>
+							</a>
+								<ul class="option-cart-item">
+									<li><span class="total">Tổng tiền:<strong>{{cart.amount
+												| number}} VNĐ</strong></span>
+										<hr>
+										<button style="margin-right: 20px" class="checkout"
+											onClick="location.href='/cart/view'">Chi Tiết</button>
+										<button style="margin-right: 30px" class="checkout"
+											ng-click="cart.clear()">Clear</button></li>
+								</ul></li>
+						</ul>
+						<div class="navbar-collapse collapse">
+							<ul class="nav navbar-nav1">
+								<li class="active dropdown"><a href="/home/index">Trang
+										chủ</a></li>
+								<li class="dropdown"><a href="#" class="dropdown-toggle"
+									data-toggle="dropdown">Danh mục</a>
+									<div class="dropdown-menu">
+										<ul class="mega-menu-links">
+											<th:block th:each="c : ${cates}">
+												<li><a th:href="@{|/home/index?cid=${c.id}|}">[[${c.name}]]</a></li>
+											</th:block>
+										</ul>
+									</div></li>
+								<li
+									th:if="${#request.isUserInRole('AD')}">
+									<a th:href="@{/admin/home/index}">Quản Lý</a>
+								</li>
+								<li
+									th:if="${#request.isUserInRole('CH')}">
+									<a th:href="@{/store/home/index}">Quản Lý CH</a>
+								</li>
+								<li
+									th:if="${#request.isUserInRole('AD')} or ${#request.isUserInRole('CH')}">
+									<a href="/tintuc/post">Đăng Bài</a>
+								</li>
+								<li th:if="${#request.remoteUser}" class="dropdown"><a href="#" class="dropdown-toggle"
+									id="username" data-toggle="dropdown"
+									th:text="${#request.remoteUser}"></a>
+									<div class="dropdown-menu">
+										<ul class="mega-menu-links">
+											<li><a href="/account/individual">Thông tin TK</a></li>
+											<li><a href="/account/doimk">Đổi MK</a></li>
+											<li><a href="/account/edit">Cập nhật TK</a></li>
+											<li><a th:href="@{/order/list}">LS mua hàng</a></li>
+											<li><a th:href="@{/product/list}">SP đã thích</a></li>
+											<li><a href="/security/logoff">Đăng Xuất</a></li>
+										</ul>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

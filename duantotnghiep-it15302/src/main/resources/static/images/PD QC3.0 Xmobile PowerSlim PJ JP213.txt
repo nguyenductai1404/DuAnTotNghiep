@@ -1,0 +1,14 @@
+PD QC3.0 Xmobile PowerSlim PJ JP213
+
+Hiệu suất sạc: 65%
+Dung lượng pin: 10.000 mAh
+Thời gian sạc đầy pin: 10 - 11 giờ (dùng Adapter 1A)5 - 6 giờ (dùng Adapter 2A)
+Nguồn vào: Micro USB: 5V - 2A, 9V - 2AType C: 5V - 3A, 9V - 2A
+Nguồn ra: USB: 5V - 3A, 9V - 2A, 12V - 1.5AType-C PD: 5V - 3A, 9V - 2A, 12V - 1.5A
+Lõi pin: Polymer
+Công nghệ/Tiện ích: Đèn LED báo hiệuPower DeliveryQuick Charge 3.0
+Kích thước: Dài 10.5cm - Rộng 5 cm - Dày 2.5 cm
+Trọng lượng: 205g
+Thương hiệu của: Thế Giới Di Động
+Sản xuất tại: Trung Quốc
+Hãng Xmobile

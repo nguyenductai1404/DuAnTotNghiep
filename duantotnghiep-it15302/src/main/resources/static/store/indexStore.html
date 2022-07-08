@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<title>Welcome to Shop Young Creative</title>
+<link rel="shortcut icon" href="../../images/logo1-test.png">
+<link href="../../css/bootstrap.css" rel="stylesheet">
+<link href="../../css/sequence-looptheme.css" rel="stylesheet" />
+<link href="../../css/style.css" rel="stylesheet">
+<link href="../../css/them.css" rel="stylesheet">
+<link href="../../css/indivi.css" rel="stylesheet">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+</head>
+<body id="home" ng-app="store-app">
+	<div class="wrapper">
+		<div class="header">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-2 col-sm-2">
+						<div class="them_logo">
+							<a href="/home/index"><img src="../../images/logo1-test.png"
+								alt="FlatShop"></a>
+						</div>
+					</div>
+					<div class="col-md-10 col-sm-10">
+						<div class="header_bottom">
+							<div class="navbar-collapse collapse">
+								<ul class="nav navbar-nav1">
+									<li><a href="/home/index">Trang chủ</a></li>
+									<li><a href="#!infostore">Thông tin cửa hàng</a></li>
+									<li class="dropdown"><a href="#" class="dropdown-toggle"
+										data-toggle="dropdown">QUẢN LÝ</a>
+										<div class="dropdown-menu">
+											<ul class="mega-menu-links">
+												<li><a href="#!product">Quản lý sản phẩm</a></li>
+												<li><a href="#!order">Quản lý đơn hàng</a></li>
+												<li><a href="#!post">Quản lý bài viết</a></li>
+												<li><a href="#!code">Quản lý mã</a></li>
+											</ul>
+										</div></li>
+									<li><a href="#!revenue">Doanh thu</a></li>
+									<li><a href="/security/logoff">Đăng xuất</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<main>
+			<p class="ng-view" />
+		</main>
+	</div>
+	<script src="/store/store-app.js"></script>
+	<script src="/store/info/info-ctrl.js"></script>
+	<script src="/store/product/product-ctrl.js"></script>
+	<script src="/store/order/order-ctrl.js"></script>
+	<script src="/store/revenue/revenue-ctrl.js"></script>
+	<script src="/store/post/post-ctrl.js"></script>
+	<script src="/store/code/code-ctrl.js"></script>
+</body>
+
+</html>

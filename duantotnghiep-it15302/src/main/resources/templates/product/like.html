@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="~{/layout/index :: dynamic(~{::main})}">
+<body>
+	<main>
+		<div class="wrapper">
+			<div class="container_fullwidth">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="banner">
+								<div class="bannerslide" id="bannerslide">
+									<ul class="slides">
+										<li><a href="#"> <img
+												src="../../images/banner-01.png" width="100%" alt="" />
+										</a></li>
+										<li><a href="#"> <img
+												src="../../images/banner-02.png" width="100%" alt="" />
+										</a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="clearfix"></div>
+							<div class="products-list">
+								<div th:each="p: ${items.content}">
+									<ul class="products-listItem" th:fragment="product_list">
+										<li class="products">
+											<div class="thumbnail">
+												<a
+													th:href="@{|/product/detail/${p.product.id}?cid=${p.product.catesmall.category.id}|}">
+													<img th:src="@{|../../images/${p.product.image}|}">
+												</a>
+											</div>
+											<div class="product-list-description">
+												<div class="productname" th:utext="${p.product.name}"></div>
+												<p>
+													Tên cửa hàng: <span th:text="${p.product.cuahang.tencuahang}"></span>
+												</p>
+												<p>
+													Loại sản phẩm: <span th:text="${p.product.catesmall.category.name}"></span>
+												</p>
+												<p>
+													Nhãn hiệu: <span th:text="${p.product.catesmall.name}"></span>
+												</p>
+												<p>
+													SL hiện có: <span th:text="${p.product.soluong}"></span>
+												</p>
+												<div class="list_bottom">
+													<div class="price">
+														<span class="new_price"
+															th:utext="${#numbers.formatDecimal(p.product.price, 1, 'COMMA', 0, 'POINT')} + ' VNĐ'">
+														</span>
+													</div>
+													<div class="button_group">
+														<button class="button"
+															th:attr="ng-click=@{|cart.add(${p.product.id})|}">Thêm
+															vào giỏ</button>
+														<th:block th:if="${#request.remoteUser}">
+															<button class="button"
+																th:unless="${#arrays.contains(like, p.product.id)}"
+																th:attr="ng-click=@{|products.like(${p.product.id})|}">Like</button>
+															<button class="button"
+																th:if="${#arrays.contains(like, p.product.id)}"
+																th:attr="ng-click=@{|products.dislike(${p.product.id})|}">Dislike</button>
+														</th:block>
+													</div>
+												</div>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="toolbar">
+								<div class="pager">
+									<a th:href="@{|/product/list?p=${items.number-1}|}"
+										class="prev-page"> <i class="fa fa-angle-left"></i>
+									</a> <a class="active">[[${items.number+1}]] /
+										[[${items.totalPages}]]</a> <a
+										th:href="@{|/product/list?p=${items.number+1}|}"
+										class="next-page"> <i class="fa fa-angle-right"> </i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+</body>
+</html>
